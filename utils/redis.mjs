@@ -1,9 +1,8 @@
-import { resolve } from 'path';
 import redis from 'redis';
 
 class RedisClient {
     constructor() {
-        this.client = RedisClient();
+        this.client = redis.createClient();
         this.client.on('error', (err) => console.log(`Redis error : ${err}`));
     }
 
